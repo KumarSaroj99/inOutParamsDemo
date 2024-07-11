@@ -11,8 +11,11 @@ namespace InOutParams
 
         static void Main(string[] args)
         {
-            int myNumber = 10;           //for 'in'
-            Console.WriteLine("Original number: " + myNumber);
+            int myNumber=0;     //only for 'in'
+            Console.WriteLine("Enter a number : ");
+            if(int.TryParse(Console.ReadLine(),out int number))    //use of int.TryParse
+                myNumber = number;
+            Console.WriteLine("Original number: " + myNumber);  //for 'in'
             PrintIn(in myNumber);
             Console.WriteLine("Number after 'in' function: " + myNumber);
 
